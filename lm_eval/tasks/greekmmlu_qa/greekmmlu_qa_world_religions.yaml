@@ -2,4 +2,4 @@ include: _default_greekmmlu_qa_template_yaml
 tag: greekmmlu_qa_humanities_tasks
 task: greekmmlu_qa_world_religions
 task_alias: World Religions
-dataset_name: world_religions
+dataset_name: World_Religions

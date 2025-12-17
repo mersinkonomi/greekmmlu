@@ -2,4 +2,4 @@ include: _default_greekmmlu_qa_template_yaml
 tag: greekmmlu_qa_stem_tasks
 task: greekmmlu_qa_biology
 task_alias: Biology
-dataset_name: biology
+dataset_name: Biology

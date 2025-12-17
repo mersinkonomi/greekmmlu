@@ -2,4 +2,4 @@ include: _default_greekmmlu_qa_template_yaml
 tag: greekmmlu_qa_other_tasks
 task: greekmmlu_qa_general_knowledge
 task_alias: General Knowledge
-dataset_name: general_knowledge
+dataset_name: General_Knowledge

@@ -23,7 +23,6 @@ SUBJECTS = {
     "Greek Literature": "humanities",
     "Greek Mythology": "humanities",
     "Greek Traditions": "humanities",
-    "Philosophy": "humanities",
     "Prehistory": "humanities",
     "World History": "humanities",
     "World Religions": "humanities",
@@ -85,13 +84,15 @@ if __name__ == "__main__":
             ALL_CATEGORIES.append(category)
 
         normalized_subject = normalize_subject_name(subject)
+        # Use HF config name format (with underscores, matching our push_to_hub config_name)
+        hf_config_name = subject.replace(" ", "_").replace("&", "and")
 
         yaml_dict = {
             "include": base_yaml_name,
             "tag": f"greekmmlu_qa_{category}_tasks",
             "task": f"greekmmlu_qa_{normalized_subject}",
             "task_alias": subject,
-            "dataset_name": normalized_subject,
+            "dataset_name": hf_config_name,
         }
 
         file_save_path = f"{args.save_prefix_path}_{normalized_subject}.yaml"

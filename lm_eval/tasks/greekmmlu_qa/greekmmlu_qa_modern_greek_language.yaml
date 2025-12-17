@@ -2,4 +2,4 @@ include: _default_greekmmlu_qa_template_yaml
 tag: greekmmlu_qa_social_sciences_tasks
 task: greekmmlu_qa_modern_greek_language
 task_alias: Modern Greek Language
-dataset_name: modern_greek_language
+dataset_name: Modern_Greek_Language

@@ -5,7 +5,6 @@ task:
 - greekmmlu_qa_greek_literature
 - greekmmlu_qa_greek_mythology
 - greekmmlu_qa_greek_traditions
-- greekmmlu_qa_philosophy
 - greekmmlu_qa_prehistory
 - greekmmlu_qa_world_history
 - greekmmlu_qa_world_religions
