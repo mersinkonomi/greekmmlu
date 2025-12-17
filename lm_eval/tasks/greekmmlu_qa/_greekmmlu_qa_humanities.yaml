@@ -8,3 +8,7 @@ task:
 - greekmmlu_qa_prehistory
 - greekmmlu_qa_world_history
 - greekmmlu_qa_world_religions
+aggregate_metric_list:
+  - metric: acc
+    aggregation: mean
+    weight_by_size: true

@@ -11,3 +11,7 @@ task:
 - greekmmlu_qa_mathematics
 - greekmmlu_qa_medicine
 - greekmmlu_qa_physics
+aggregate_metric_list:
+  - metric: acc
+    aggregation: mean
+    weight_by_size: true

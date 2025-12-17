@@ -8,3 +8,7 @@ task:
 - greekmmlu_qa_law
 - greekmmlu_qa_management
 - greekmmlu_qa_modern_greek_language
+aggregate_metric_list:
+  - metric: acc
+    aggregation: mean
+    weight_by_size: true
