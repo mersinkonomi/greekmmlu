@@ -1,0 +1,9 @@
+group: greekmmlu_social_science
+group_alias: Social Sciences
+task:
+- greekmmlu_social_science_tasks
+aggregate_metric_list:
+- metric: acc
+  weight_by_size: true
+metadata:
+  version: 1

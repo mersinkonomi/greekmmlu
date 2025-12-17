@@ -16,12 +16,10 @@ declare -a MODELS=(
     "ilsp/Meltemi-7B-Instruct-v1.5"
 )
 
-# Define tasks with their few-shot settings (only dascim_all)
+# Define tasks with their few-shot settings
 # Format: "task_name:few_shot_count"
 declare -a TASKS=(
-    "dascim_all:0"
-    "dascim_all:5"
-    "dascim_all:25"
+    "greekmmlu_qa:5"
 )
 
 echo "Starting evaluation for ${#MODELS[@]} model(s)"
@@ -52,7 +50,7 @@ for MODEL_NAME in "${MODELS[@]}"; do
             --trust_remote_code \
             --num_fewshot "$few_shot" \
             --output_path "$OUTPUT_PATH" \
-            --device cuda:0 \
+            --device cuda:1 \
             --log_samples
         
         if [ $? -ne 0 ]; then
