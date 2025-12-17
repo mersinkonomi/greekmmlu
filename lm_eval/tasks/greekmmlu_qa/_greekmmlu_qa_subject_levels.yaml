@@ -1,0 +1,33 @@
+group: greekmmlu_qa_subject_levels
+task:
+  - greekmmlu_qa_agriculture_professional
+  - greekmmlu_qa_agriculture_university
+  - greekmmlu_qa_art_professional
+  - greekmmlu_qa_art_secondary_school
+  - greekmmlu_qa_art_university
+  - greekmmlu_qa_computer_science_professional
+  - greekmmlu_qa_computer_science_university
+  - greekmmlu_qa_economics_professional
+  - greekmmlu_qa_economics_university
+  - greekmmlu_qa_education_professional
+  - greekmmlu_qa_education_university
+  - greekmmlu_qa_geography_primary_school
+  - greekmmlu_qa_geography_secondary_school
+  - greekmmlu_qa_government_and_politics_primary_school
+  - greekmmlu_qa_government_and_politics_secondary_school
+  - greekmmlu_qa_greek_history_primary_school
+  - greekmmlu_qa_greek_history_professional
+  - greekmmlu_qa_greek_history_secondary_school
+  - greekmmlu_qa_management_professional
+  - greekmmlu_qa_management_university
+  - greekmmlu_qa_medicine_professional
+  - greekmmlu_qa_medicine_university
+  - greekmmlu_qa_modern_greek_language_primary_school
+  - greekmmlu_qa_modern_greek_language_secondary_school
+  - greekmmlu_qa_physics_primary_school
+  - greekmmlu_qa_physics_professional
+  - greekmmlu_qa_physics_university
+aggregate_metric_list:
+  - metric: acc
+    aggregation: mean
+    weight_by_size: true

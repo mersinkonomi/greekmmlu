@@ -1,0 +1,5 @@
+include: _default_greekmmlu_qa_template_yaml
+tag: greekmmlu_qa_subject_levels
+task: greekmmlu_qa_medicine_university
+task_alias: Medicine (University)
+dataset_name: Medicine_University

@@ -1,0 +1,5 @@
+include: _default_greekmmlu_qa_template_yaml
+tag: greekmmlu_qa_subject_levels
+task: greekmmlu_qa_modern_greek_language_primary_school
+task_alias: Modern Greek Language (Primary School)
+dataset_name: Modern_Greek_Language_Primary_School
