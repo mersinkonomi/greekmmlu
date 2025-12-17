@@ -1,0 +1,4 @@
+include: _default_gmmlu_template_yaml
+task: gmmlu_computer_science
+task_alias: Computer Science
+dataset_name: Computer_Science

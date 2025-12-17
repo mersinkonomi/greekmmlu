@@ -1,0 +1,4 @@
+include: _default_gmmlu_template_yaml
+task: gmmlu_economics
+task_alias: Economics
+dataset_name: Economics

@@ -1,0 +1,7 @@
+group: gmmlu
+task:
+  - gmmlu_subjects
+aggregate_metric_list:
+  - metric: acc
+    aggregation: mean
+    weight_by_size: true
