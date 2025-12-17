@@ -1,0 +1,8 @@
+include: _default_greekmmlu_qa_template_yaml
+tag: greekmmlu_qa_stem_tasks
+task: greekmmlu_qa_clinical_knowledge
+task_alias: Clinical Knowledge
+dataset_kwargs:
+  data_files:
+    train: /home/mersin-konomi/model_eval/lm-evaluation-harness/lm_eval/tasks/greekmmlu_qa/data/clinical_knowledge.jsonl
+  lines: true

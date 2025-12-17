@@ -1,0 +1,10 @@
+group: greekmmlu_qa_social_sciences
+task:
+- greekmmlu_qa_accounting
+- greekmmlu_qa_economics
+- greekmmlu_qa_education
+- greekmmlu_qa_geography
+- greekmmlu_qa_government_and_politics
+- greekmmlu_qa_law
+- greekmmlu_qa_management
+- greekmmlu_qa_modern_greek_language

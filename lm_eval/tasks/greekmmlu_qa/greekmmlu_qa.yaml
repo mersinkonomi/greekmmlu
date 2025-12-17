@@ -1,0 +1,6 @@
+group: greekmmlu_qa
+task:
+- greekmmlu_qa_humanities
+- greekmmlu_qa_social_sciences
+- greekmmlu_qa_stem
+- greekmmlu_qa_other
