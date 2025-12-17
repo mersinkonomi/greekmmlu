@@ -2,7 +2,4 @@ include: _default_greekmmlu_qa_template_yaml
 tag: greekmmlu_qa_humanities_tasks
 task: greekmmlu_qa_world_history
 task_alias: World History
-dataset_kwargs:
-  data_files:
-    train: /home/mersin-konomi/model_eval/lm-evaluation-harness/lm_eval/tasks/greekmmlu_qa/data/world_history.jsonl
-  lines: true
+dataset_name: world_history

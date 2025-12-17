@@ -2,7 +2,4 @@ include: _default_greekmmlu_qa_template_yaml
 tag: greekmmlu_qa_stem_tasks
 task: greekmmlu_qa_biology
 task_alias: Biology
-dataset_kwargs:
-  data_files:
-    train: /home/mersin-konomi/model_eval/lm-evaluation-harness/lm_eval/tasks/greekmmlu_qa/data/biology.jsonl
-  lines: true
+dataset_name: biology

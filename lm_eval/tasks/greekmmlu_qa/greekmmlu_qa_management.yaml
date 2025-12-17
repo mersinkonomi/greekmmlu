@@ -2,7 +2,4 @@ include: _default_greekmmlu_qa_template_yaml
 tag: greekmmlu_qa_social_sciences_tasks
 task: greekmmlu_qa_management
 task_alias: Management
-dataset_kwargs:
-  data_files:
-    train: /home/mersin-konomi/model_eval/lm-evaluation-harness/lm_eval/tasks/greekmmlu_qa/data/management.jsonl
-  lines: true
+dataset_name: management

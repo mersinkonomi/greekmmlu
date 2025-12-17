@@ -85,21 +85,13 @@ if __name__ == "__main__":
             ALL_CATEGORIES.append(category)
 
         normalized_subject = normalize_subject_name(subject)
-        # Use absolute path to data file
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        data_file = os.path.join(script_dir, "data", f"{normalized_subject}.jsonl")
 
         yaml_dict = {
             "include": base_yaml_name,
             "tag": f"greekmmlu_qa_{category}_tasks",
             "task": f"greekmmlu_qa_{normalized_subject}",
             "task_alias": subject,
-            "dataset_kwargs": {
-                "data_files": {
-                    "train": data_file
-                },
-                "lines": True  # JSONL format
-            }
+            "dataset_name": normalized_subject,
         }
 
         file_save_path = f"{args.save_prefix_path}_{normalized_subject}.yaml"
