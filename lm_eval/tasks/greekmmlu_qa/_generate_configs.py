@@ -1,6 +1,7 @@
 """
 Generate Greek MMLU task configurations from gmmlu_qa.json dataset.
 Creates individual YAML files for each subject and category group files.
+Also generates subject+level configs for subjects with educational level splits.
 """
 
 import argparse
@@ -55,6 +56,30 @@ SUBJECTS = {
     "General Knowledge": "other",
 }
 
+# Subjects WITH level splits - these get subject+level configs instead of plain subject configs
+SUBJECTS_WITH_LEVELS = {
+    "Agriculture": ["Professional", "University"],
+    "Art": ["Professional", "Secondary_School", "University"],
+    "Computer Science": ["Professional", "University"],
+    "Economics": ["Professional", "University"],
+    "Education": ["Professional", "University"],
+    "Geography": ["Primary_School", "Secondary_School"],
+    "Government and Politics": ["Primary_School", "Secondary_School"],
+    "Greek History": ["Primary_School", "Professional", "Secondary_School"],
+    "Management": ["Professional", "University"],
+    "Medicine": ["Professional", "University"],
+    "Modern Greek Language": ["Primary_School", "Secondary_School"],
+    "Physics": ["Primary_School", "Professional", "University"],
+}
+
+# Subjects WITHOUT level splits - these keep plain subject configs
+SUBJECTS_WITHOUT_LEVELS = [
+    "Accounting", "Biology", "Chemistry", "Civil Engineering", "Clinical Knowledge",
+    "Computer Networks & Security", "Driving Rules", "Electrical Engineering",
+    "General Knowledge", "Greek Literature", "Greek Mythology", "Greek Traditions",
+    "Law", "Mathematics", "Prehistory", "World History", "World Religions"
+]
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -75,16 +100,19 @@ if __name__ == "__main__":
     # Get filename of base_yaml so we can `"include":` it in our "other" YAMLs
     base_yaml_name = os.path.split(args.base_yaml_path)[-1]
 
-    # Verify all subjects in our mapping
-    eval_logger.info(f"Generating configs for {len(SUBJECTS)} subjects")
+    eval_logger.info(f"Generating configs for Greek MMLU...")
 
     ALL_CATEGORIES = []
-    for subject, category in tqdm(SUBJECTS.items(), desc="Generating subject configs"):
+    all_tasks = []  # Track all tasks for main benchmark file
+
+    # 1. Generate plain subject configs (for subjects WITHOUT level splits)
+    print("\n=== Generating Plain Subject Configs ===")
+    for subject in tqdm(SUBJECTS_WITHOUT_LEVELS, desc="Plain subject configs"):
+        category = SUBJECTS[subject]
         if category not in ALL_CATEGORIES:
             ALL_CATEGORIES.append(category)
 
         normalized_subject = normalize_subject_name(subject)
-        # Use HF config name format (with underscores, matching our push_to_hub config_name)
         hf_config_name = subject.replace(" ", "_").replace("&", "and")
 
         yaml_dict = {
@@ -96,54 +124,102 @@ if __name__ == "__main__":
         }
 
         file_save_path = f"{args.save_prefix_path}_{normalized_subject}.yaml"
-        eval_logger.info(f"Saving yaml for subset {subject} to {file_save_path}")
-        
         with open(file_save_path, "w", encoding="utf-8") as yaml_file:
-            yaml.dump(
-                yaml_dict,
-                yaml_file,
-                allow_unicode=True,
-                default_flow_style=False,
-                sort_keys=False,
-            )
+            yaml.dump(yaml_dict, yaml_file, allow_unicode=True, default_flow_style=False, sort_keys=False)
+        
+        all_tasks.append(f"greekmmlu_qa_{normalized_subject}")
+        print(f"  ✓ {file_save_path}")
 
-    # Generate category group files
+    # 2. Generate subject+level configs (for subjects WITH level splits)
+    print("\n=== Generating Subject+Level Configs ===")
+    for subject, levels in tqdm(SUBJECTS_WITH_LEVELS.items(), desc="Subject+level configs"):
+        category = SUBJECTS[subject]
+        if category not in ALL_CATEGORIES:
+            ALL_CATEGORIES.append(category)
+
+        normalized_subject = normalize_subject_name(subject)
+        
+        for level in levels:
+            # Config name: Subject_Level (e.g., Physics_Professional)
+            hf_config_name = f"{subject.replace(' ', '_').replace('&', 'and')}_{level}"
+            normalized_level = level.lower()
+            task_name = f"greekmmlu_qa_{normalized_subject}_{normalized_level}"
+            
+            # Alias: Subject (Level) e.g. "Physics (Professional)"
+            alias_level = level.replace("_", " ")
+            task_alias = f"{subject} ({alias_level})"
+
+            yaml_dict = {
+                "include": base_yaml_name,
+                "tag": f"greekmmlu_qa_{category}_tasks",
+                "task": task_name,
+                "task_alias": task_alias,
+                "dataset_name": hf_config_name,
+            }
+
+            file_save_path = f"{args.save_prefix_path}_{normalized_subject}_{normalized_level}.yaml"
+            with open(file_save_path, "w", encoding="utf-8") as yaml_file:
+                yaml.dump(yaml_dict, yaml_file, allow_unicode=True, default_flow_style=False, sort_keys=False)
+            
+            all_tasks.append(task_name)
+            print(f"  ✓ {file_save_path}")
+
+    # 3. Generate category group files
+    print("\n=== Generating Category Group Configs ===")
     for category in ALL_CATEGORIES:
-        category_subjects = [
-            f"greekmmlu_qa_{normalize_subject_name(subj)}"
-            for subj, cat in SUBJECTS.items()
-            if cat == category
-        ]
+        # Get all tasks for this category
+        category_tasks = []
+        
+        # Plain subject tasks
+        for subject in SUBJECTS_WITHOUT_LEVELS:
+            if SUBJECTS[subject] == category:
+                category_tasks.append(f"greekmmlu_qa_{normalize_subject_name(subject)}")
+        
+        # Subject+level tasks
+        for subject, levels in SUBJECTS_WITH_LEVELS.items():
+            if SUBJECTS[subject] == category:
+                for level in levels:
+                    task_name = f"greekmmlu_qa_{normalize_subject_name(subject)}_{level.lower()}"
+                    category_tasks.append(task_name)
 
         file_save_path = f"_greekmmlu_qa_{category}.yaml"
-        eval_logger.info(f"Saving category config for {category} to {file_save_path}")
-        
         with open(file_save_path, "w", encoding="utf-8") as yaml_file:
             yaml.dump(
                 {
                     "group": f"greekmmlu_qa_{category}",
-                    "task": category_subjects,
+                    "task": category_tasks,
+                    "aggregate_metric_list": [
+                        {"metric": "acc", "aggregation": "mean", "weight_by_size": True}
+                    ],
                 },
                 yaml_file,
                 indent=4,
                 default_flow_style=False,
             )
+        print(f"  ✓ {file_save_path} ({len(category_tasks)} tasks)")
 
-    # Generate main benchmark file
+    # 4. Generate main benchmark file
+    print("\n=== Generating Main Benchmark Config ===")
     greekmmlu_subcategories = [f"greekmmlu_qa_{category}" for category in ALL_CATEGORIES]
 
     file_save_path = f"{args.save_prefix_path}.yaml"
-    eval_logger.info(f"Saving main benchmark config to {file_save_path}")
-    
     with open(file_save_path, "w", encoding="utf-8") as yaml_file:
         yaml.dump(
             {
                 "group": "greekmmlu_qa",
                 "task": greekmmlu_subcategories,
+                "aggregate_metric_list": [
+                    {"metric": "acc", "aggregation": "mean", "weight_by_size": True}
+                ],
             },
             yaml_file,
             indent=4,
             default_flow_style=False,
         )
+    print(f"  ✓ {file_save_path}")
 
-    eval_logger.info("✓ Generation complete!")
+    print(f"\n✅ Generation complete!")
+    print(f"   Plain subject configs: {len(SUBJECTS_WITHOUT_LEVELS)}")
+    print(f"   Subject+level configs: {sum(len(v) for v in SUBJECTS_WITH_LEVELS.values())}")
+    print(f"   Category groups: {len(ALL_CATEGORIES)}")
+    print(f"   Total tasks: {len(all_tasks)}")
