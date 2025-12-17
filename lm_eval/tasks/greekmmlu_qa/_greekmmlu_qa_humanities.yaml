@@ -1,14 +1,18 @@
+aggregate_metric_list:
+-   aggregation: mean
+    metric: acc
+    weight_by_size: true
 group: greekmmlu_qa_humanities
 task:
-- greekmmlu_qa_art
-- greekmmlu_qa_greek_history
 - greekmmlu_qa_greek_literature
 - greekmmlu_qa_greek_mythology
 - greekmmlu_qa_greek_traditions
 - greekmmlu_qa_prehistory
 - greekmmlu_qa_world_history
 - greekmmlu_qa_world_religions
-aggregate_metric_list:
-  - metric: acc
-    aggregation: mean
-    weight_by_size: true
+- greekmmlu_qa_art_professional
+- greekmmlu_qa_art_secondary_school
+- greekmmlu_qa_art_university
+- greekmmlu_qa_greek_history_primary_school
+- greekmmlu_qa_greek_history_professional
+- greekmmlu_qa_greek_history_secondary_school
