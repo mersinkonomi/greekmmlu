@@ -1,0 +1,901 @@
+{
+  "accounting": {
+    "description": "Greek-MMLU subject: Accounting",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 185
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "agriculture": {
+    "description": "Greek-MMLU subject: Agriculture",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 533
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "art": {
+    "description": "Greek-MMLU subject: Art",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 855
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "biology": {
+    "description": "Greek-MMLU subject: Biology",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 82
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "chemistry": {
+    "description": "Greek-MMLU subject: Chemistry",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 81
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "civil_engineering": {
+    "description": "Greek-MMLU subject: Civil Engineering",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 1038
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "clinical_knowledge": {
+    "description": "Greek-MMLU subject: Clinical Knowledge",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 617
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "computer_networks_security": {
+    "description": "Greek-MMLU subject: Computer Networks & Security",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 63
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "computer_science": {
+    "description": "Greek-MMLU subject: Computer Science",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 452
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "driving_rules": {
+    "description": "Greek-MMLU subject: Driving Rules",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 2240
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "economics": {
+    "description": "Greek-MMLU subject: Economics",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 287
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "education": {
+    "description": "Greek-MMLU subject: Education",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 299
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "electrical_engineering": {
+    "description": "Greek-MMLU subject: Electrical Engineering",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 684
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "general_knowledge": {
+    "description": "Greek-MMLU subject: General Knowledge",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 130
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "geography": {
+    "description": "Greek-MMLU subject: Geography",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 553
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "government_and_politics": {
+    "description": "Greek-MMLU subject: Government and Politics",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 360
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "greek_history": {
+    "description": "Greek-MMLU subject: Greek History",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 847
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "greek_literature": {
+    "description": "Greek-MMLU subject: Greek Literature",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 14
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "greek_mythology": {
+    "description": "Greek-MMLU subject: Greek Mythology",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 321
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "greek_traditions": {
+    "description": "Greek-MMLU subject: Greek Traditions",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 507
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "law": {
+    "description": "Greek-MMLU subject: Law",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 1208
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "management": {
+    "description": "Greek-MMLU subject: Management",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 896
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "mathematics": {
+    "description": "Greek-MMLU subject: Mathematics",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 1504
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "medicine": {
+    "description": "Greek-MMLU subject: Medicine",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 468
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "modern_greek_language": {
+    "description": "Greek-MMLU subject: Modern Greek Language",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 3190
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "physics": {
+    "description": "Greek-MMLU subject: Physics",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 2082
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "prehistory": {
+    "description": "Greek-MMLU subject: Prehistory",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 63
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "world_history": {
+    "description": "Greek-MMLU subject: World History",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 20
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  },
+  "world_religions": {
+    "description": "Greek-MMLU subject: World Religions",
+    "features": {
+      "id": {
+        "dtype": "string"
+      },
+      "question": {
+        "dtype": "string"
+      },
+      "choices": {
+        "feature": {
+          "dtype": "string"
+        },
+        "dtype": "dict"
+      },
+      "answer": {
+        "dtype": "string"
+      }
+    },
+    "splits": {
+      "dev": {
+        "num_examples": 5
+      },
+      "test": {
+        "num_examples": 155
+      }
+    },
+    "citation": "@dataset{greek_mmlu_2025, title={Greek-MMLU: A Massive Multitask Language Understanding Benchmark for Greek}, author={...}, year={2025}}",
+    "homepage": "https://huggingface.co/datasets/USERNAME/GreekMMLU",
+    "license": "CC BY-SA 4.0"
+  }
+}

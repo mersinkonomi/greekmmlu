@@ -1,0 +1,210 @@
+[
+  {
+    "subject": "Accounting",
+    "included": true,
+    "slug": "accounting",
+    "dev_examples": 5,
+    "test_examples": 185
+  },
+  {
+    "subject": "Agriculture",
+    "included": true,
+    "slug": "agriculture",
+    "dev_examples": 5,
+    "test_examples": 533
+  },
+  {
+    "subject": "Art",
+    "included": true,
+    "slug": "art",
+    "dev_examples": 5,
+    "test_examples": 855
+  },
+  {
+    "subject": "Biology",
+    "included": true,
+    "slug": "biology",
+    "dev_examples": 5,
+    "test_examples": 82
+  },
+  {
+    "subject": "Chemistry",
+    "included": true,
+    "slug": "chemistry",
+    "dev_examples": 5,
+    "test_examples": 81
+  },
+  {
+    "subject": "Civil Engineering",
+    "included": true,
+    "slug": "civil_engineering",
+    "dev_examples": 5,
+    "test_examples": 1038
+  },
+  {
+    "subject": "Clinical Knowledge",
+    "included": true,
+    "slug": "clinical_knowledge",
+    "dev_examples": 5,
+    "test_examples": 617
+  },
+  {
+    "subject": "Computer Networks & Security",
+    "included": true,
+    "slug": "computer_networks_security",
+    "dev_examples": 5,
+    "test_examples": 63
+  },
+  {
+    "subject": "Computer Science",
+    "included": true,
+    "slug": "computer_science",
+    "dev_examples": 5,
+    "test_examples": 452
+  },
+  {
+    "subject": "Driving Rules",
+    "included": true,
+    "slug": "driving_rules",
+    "dev_examples": 5,
+    "test_examples": 2240
+  },
+  {
+    "subject": "Economics",
+    "included": true,
+    "slug": "economics",
+    "dev_examples": 5,
+    "test_examples": 287
+  },
+  {
+    "subject": "Education",
+    "included": true,
+    "slug": "education",
+    "dev_examples": 5,
+    "test_examples": 299
+  },
+  {
+    "subject": "Electrical Engineering",
+    "included": true,
+    "slug": "electrical_engineering",
+    "dev_examples": 5,
+    "test_examples": 684
+  },
+  {
+    "subject": "General Knowledge",
+    "included": true,
+    "slug": "general_knowledge",
+    "dev_examples": 5,
+    "test_examples": 130
+  },
+  {
+    "subject": "Geography",
+    "included": true,
+    "slug": "geography",
+    "dev_examples": 5,
+    "test_examples": 553
+  },
+  {
+    "subject": "Government and Politics",
+    "included": true,
+    "slug": "government_and_politics",
+    "dev_examples": 5,
+    "test_examples": 360
+  },
+  {
+    "subject": "Greek History",
+    "included": true,
+    "slug": "greek_history",
+    "dev_examples": 5,
+    "test_examples": 847
+  },
+  {
+    "subject": "Greek Literature",
+    "included": true,
+    "slug": "greek_literature",
+    "dev_examples": 5,
+    "test_examples": 14
+  },
+  {
+    "subject": "Greek Mythology",
+    "included": true,
+    "slug": "greek_mythology",
+    "dev_examples": 5,
+    "test_examples": 321
+  },
+  {
+    "subject": "Greek Traditions",
+    "included": true,
+    "slug": "greek_traditions",
+    "dev_examples": 5,
+    "test_examples": 507
+  },
+  {
+    "subject": "Law",
+    "included": true,
+    "slug": "law",
+    "dev_examples": 5,
+    "test_examples": 1208
+  },
+  {
+    "subject": "Management",
+    "included": true,
+    "slug": "management",
+    "dev_examples": 5,
+    "test_examples": 896
+  },
+  {
+    "subject": "Mathematics",
+    "included": true,
+    "slug": "mathematics",
+    "dev_examples": 5,
+    "test_examples": 1504
+  },
+  {
+    "subject": "Medicine",
+    "included": true,
+    "slug": "medicine",
+    "dev_examples": 5,
+    "test_examples": 468
+  },
+  {
+    "subject": "Modern Greek Language",
+    "included": true,
+    "slug": "modern_greek_language",
+    "dev_examples": 5,
+    "test_examples": 3190
+  },
+  {
+    "subject": "Philosophy",
+    "included": false,
+    "reason": "Fewer than 5 MCQs"
+  },
+  {
+    "subject": "Physics",
+    "included": true,
+    "slug": "physics",
+    "dev_examples": 5,
+    "test_examples": 2082
+  },
+  {
+    "subject": "Prehistory",
+    "included": true,
+    "slug": "prehistory",
+    "dev_examples": 5,
+    "test_examples": 63
+  },
+  {
+    "subject": "World History",
+    "included": true,
+    "slug": "world_history",
+    "dev_examples": 5,
+    "test_examples": 20
+  },
+  {
+    "subject": "World Religions",
+    "included": true,
+    "slug": "world_religions",
+    "dev_examples": 5,
+    "test_examples": 155
+  }
+]
