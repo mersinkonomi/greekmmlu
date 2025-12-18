@@ -85,7 +85,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--base_yaml_path", default="_default_greekmmlu_qa_template_yaml")
     parser.add_argument("--save_prefix_path", default="greekmmlu_qa")
-    parser.add_argument("--data_path", default="/home/mersin-konomi/gmmlu_qa.json")
+    # parser.add_argument("--data_path", default="/home/mersin-konomi/gmmlu_qa.json")
     return parser.parse_args()
 
 
@@ -145,9 +145,8 @@ if __name__ == "__main__":
             normalized_level = level.lower()
             task_name = f"greekmmlu_qa_{normalized_subject}_{normalized_level}"
             
-            # Alias: Subject (Level) e.g. "Physics (Professional)"
-            alias_level = level.replace("_", " ")
-            task_alias = f"{subject} ({alias_level})"
+            # Alias: Subject_Level e.g. "Physics_Professional"
+            task_alias = f"{subject}_{level}"
 
             yaml_dict = {
                 "include": base_yaml_name,
@@ -164,45 +163,40 @@ if __name__ == "__main__":
             all_tasks.append(task_name)
             print(f"  ✓ {file_save_path}")
 
-    # 3. Generate category group files
+    # 3. Generate category group files (using tag as task instead of listing individual tasks)
     print("\n=== Generating Category Group Configs ===")
     for category in ALL_CATEGORIES:
-        # Get all tasks for this category
-        category_tasks = []
-        
-        # Plain subject tasks
+        # Count tasks for this category (for logging purposes)
+        task_count = 0
         for subject in SUBJECTS_WITHOUT_LEVELS:
             if SUBJECTS[subject] == category:
-                category_tasks.append(f"greekmmlu_qa_{normalize_subject_name(subject)}")
-        
-        # Subject+level tasks
+                task_count += 1
         for subject, levels in SUBJECTS_WITH_LEVELS.items():
             if SUBJECTS[subject] == category:
-                for level in levels:
-                    task_name = f"greekmmlu_qa_{normalize_subject_name(subject)}_{level.lower()}"
-                    category_tasks.append(task_name)
+                task_count += len(levels)
 
         file_save_path = f"_greekmmlu_qa_{category}.yaml"
         with open(file_save_path, "w", encoding="utf-8") as yaml_file:
             yaml.dump(
                 {
                     "group": f"greekmmlu_qa_{category}",
-                    "task": category_tasks,
+                    "group_alias": category,
+                    "task": [f"greekmmlu_qa_{category}_tasks"],
                     "aggregate_metric_list": [
-                        {"metric": "acc", "aggregation": "mean", "weight_by_size": True}
+                        {"metric": "acc", "weight_by_size": True}
                     ],
                 },
                 yaml_file,
                 indent=4,
                 default_flow_style=False,
             )
-        print(f"  ✓ {file_save_path} ({len(category_tasks)} tasks)")
+        print(f"  ✓ {file_save_path} (task: greekmmlu_qa_{category}_tasks, {task_count} tasks)")
 
     # 4. Generate main benchmark file
     print("\n=== Generating Main Benchmark Config ===")
     greekmmlu_subcategories = [f"greekmmlu_qa_{category}" for category in ALL_CATEGORIES]
 
-    file_save_path = f"{args.save_prefix_path}.yaml"
+    file_save_path = f"_{args.save_prefix_path}.yaml"
     with open(file_save_path, "w", encoding="utf-8") as yaml_file:
         yaml.dump(
             {

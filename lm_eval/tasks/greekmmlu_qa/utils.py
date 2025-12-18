@@ -2,7 +2,7 @@
 Greek MMLU utility functions for formatting questions and choices.
 """
 
-PROMPT = "Ερώτηση: {}\\n{}\\n\\nΑπάντηση:"
+PROMPT = "Ερώτηση: {}\n{}\n\nΑπάντηση:"
 
 # Greek choice labels
 LABELS = ["Α.", "Β.", "Γ.", "Δ.", "Ε."]
@@ -26,7 +26,7 @@ def doc_to_text(doc):
     for i, choice in enumerate(choices):
         formatted_choices.append(f"{LABELS[i]} {choice}")
     
-    choices_text = "\\n".join(formatted_choices)
+    choices_text = "\n".join(formatted_choices)
     
     return PROMPT.format(question, choices_text)
 

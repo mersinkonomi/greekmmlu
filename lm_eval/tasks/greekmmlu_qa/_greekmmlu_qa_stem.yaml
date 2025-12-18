@@ -1,22 +1,7 @@
 aggregate_metric_list:
--   aggregation: mean
-    metric: acc
+-   metric: acc
     weight_by_size: true
 group: greekmmlu_qa_stem
+group_alias: stem
 task:
-- greekmmlu_qa_biology
-- greekmmlu_qa_chemistry
-- greekmmlu_qa_civil_engineering
-- greekmmlu_qa_clinical_knowledge
-- greekmmlu_qa_computer_networks_and_security
-- greekmmlu_qa_electrical_engineering
-- greekmmlu_qa_mathematics
-- greekmmlu_qa_agriculture_professional
-- greekmmlu_qa_agriculture_university
-- greekmmlu_qa_computer_science_professional
-- greekmmlu_qa_computer_science_university
-- greekmmlu_qa_medicine_professional
-- greekmmlu_qa_medicine_university
-- greekmmlu_qa_physics_primary_school
-- greekmmlu_qa_physics_professional
-- greekmmlu_qa_physics_university
+- greekmmlu_qa_stem_tasks
