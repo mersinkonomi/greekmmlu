@@ -14,6 +14,9 @@ declare -a MODELS=(
     "ilsp/Meltemi-7B-v1"
     # "ilsp/Meltemi-7B-v1.5"
     "ilsp/Meltemi-7B-Instruct-v1.5"
+    "ilsp/Llama-Krikri-8B-Base"
+    "ilsp/Llama-Krikri-8B-Instruct"
+    "meta-llama/Llama-3.1-8B"
 )
 
 # Define tasks with their few-shot settings
