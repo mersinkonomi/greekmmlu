@@ -1,0 +1,9 @@
+include: _default_greekmmlu_template_yaml
+task: greekmmlu_government_and_politics
+task_alias: Government and Politics
+dataset_name: json
+dataset_kwargs:
+  data_files:
+    test: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/government_and_politics_test.jsonl
+    dev: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/government_and_politics_dev.jsonl
+tag: greekmmlu_social_science_tasks

@@ -1,0 +1,9 @@
+include: _default_greekmmlu_template_yaml
+task: greekmmlu_chemistry
+task_alias: Chemistry
+dataset_name: json
+dataset_kwargs:
+  data_files:
+    test: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/chemistry_test.jsonl
+    dev: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/chemistry_dev.jsonl
+tag: greekmmlu_stem_tasks

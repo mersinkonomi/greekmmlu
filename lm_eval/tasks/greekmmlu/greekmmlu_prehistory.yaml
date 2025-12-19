@@ -1,0 +1,9 @@
+include: _default_greekmmlu_template_yaml
+task: greekmmlu_prehistory
+task_alias: Prehistory
+dataset_name: json
+dataset_kwargs:
+  data_files:
+    test: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/prehistory_test.jsonl
+    dev: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/prehistory_dev.jsonl
+tag: greekmmlu_humanities_tasks

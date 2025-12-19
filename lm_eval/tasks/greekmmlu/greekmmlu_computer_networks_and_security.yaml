@@ -1,0 +1,9 @@
+include: _default_greekmmlu_template_yaml
+task: greekmmlu_computer_networks_and_security
+task_alias: Computer Networks & Security
+dataset_name: json
+dataset_kwargs:
+  data_files:
+    test: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/computer_networks_and_security_test.jsonl
+    dev: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/computer_networks_and_security_dev.jsonl
+tag: greekmmlu_stem_tasks

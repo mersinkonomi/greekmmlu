@@ -1,0 +1,9 @@
+group: greekmmlu_stem
+group_alias: STEM
+task:
+- greekmmlu_stem_tasks
+aggregate_metric_list:
+- metric: acc
+  weight_by_size: true
+metadata:
+  version: 1

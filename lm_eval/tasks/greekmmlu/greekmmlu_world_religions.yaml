@@ -1,0 +1,9 @@
+include: _default_greekmmlu_template_yaml
+task: greekmmlu_world_religions
+task_alias: World Religions
+dataset_name: json
+dataset_kwargs:
+  data_files:
+    test: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/world_religions_test.jsonl
+    dev: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/world_religions_dev.jsonl
+tag: greekmmlu_humanities_tasks
