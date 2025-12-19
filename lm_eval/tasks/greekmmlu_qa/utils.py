@@ -2,12 +2,7 @@
 Greek MMLU utility functions for formatting questions and choices.
 """
 
-PROMPT_GR = (
-    "Αυτό είναι μια ερώτηση {}. Επίλεξε τη σωστή απάντηση!\n\n"
-    "Ερώτηση: {}\n"
-    "{}\n\n"
-    "Απάντηση:"
-)
+PROMPT = "Αυτό είναι μια ερώτηση {}. Επίλεξε τη σωστή απάντηση!\n\nΕρώτηση: {}\n{}\n\n Απάντηση:"
 
 
 # subjects_gr
@@ -61,6 +56,10 @@ def doc_to_text(doc):
     """
     question = doc["question"]
     choices = doc["choices"]
+    subject = doc["subject"]
+    
+    # Convert English subject to Greek
+    subject_gr = subjects_gr.get(subject, subject)
     
     # Format choices with Greek labels
     formatted_choices = []
@@ -69,7 +68,7 @@ def doc_to_text(doc):
     
     choices_text = "\n".join(formatted_choices)
     
-    return PROMPT.format(question, choices_text)
+    return PROMPT.format(subject_gr, question, choices_text)
 
 
 def doc_to_choice(doc):
