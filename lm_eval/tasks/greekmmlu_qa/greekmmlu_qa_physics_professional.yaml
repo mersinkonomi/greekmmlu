@@ -1,5 +1,0 @@
-include: _default_greekmmlu_qa_template_yaml
-tag: greekmmlu_qa_stem_tasks
-task: greekmmlu_qa_physics_professional
-task_alias: Physics_Professional
-dataset_name: Physics_Professional

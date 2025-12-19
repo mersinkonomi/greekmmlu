@@ -1,5 +1,0 @@
-include: _default_greekmmlu_qa_template_yaml
-tag: greekmmlu_qa_stem_tasks
-task: greekmmlu_qa_agriculture_university
-task_alias: Agriculture_University
-dataset_name: Agriculture_University

@@ -1,9 +1,0 @@
-include: _default_greekmmlu_template_yaml
-task: greekmmlu_driving_rules
-task_alias: Driving Rules
-dataset_name: json
-dataset_kwargs:
-  data_files:
-    test: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/driving_rules_test.jsonl
-    dev: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/driving_rules_dev.jsonl
-tag: greekmmlu_other_tasks
