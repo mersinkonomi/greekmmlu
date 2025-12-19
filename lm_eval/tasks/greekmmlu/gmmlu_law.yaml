@@ -1,0 +1,4 @@
+include: _default_gmmlu_template_yaml
+task: gmmlu_law
+task_alias: Law
+dataset_name: Law

@@ -2,10 +2,51 @@
 Greek MMLU utility functions for formatting questions and choices.
 """
 
-PROMPT = "Ερώτηση: {}\n{}\n\nΑπάντηση:"
+PROMPT_GR = (
+    "Αυτό είναι μια ερώτηση {}. Επίλεξε τη σωστή απάντηση!\n\n"
+    "Ερώτηση: {}\n"
+    "{}\n\n"
+    "Απάντηση:"
+)
+
+
+# subjects_gr
+subjects_gr = {
+    "Economics": "Οικονομικών",
+    "Education": "Παιδαγωγικής",
+    "Medicine": "Ιατρικής",
+    "Electrical Engineering": "Ηλεκτρολόγων Μηχανικών",
+    "Greek Mythology": "Ελληνικής Μυθολογίας",
+    "Computer Networks & Security": "Δικτύων Υπολογιστών και Ασφάλειας",
+    "Law": "Νομικής",
+    "Physics": "Φυσικής",
+    "Government and Politics": "Διακυβέρνησης και Πολιτικής",
+    "Art": "Τέχνης",
+    "Greek Literature": "Νεοελληνικής Λογοτεχνίας",
+    "World History": "Παγκόσμιας Ιστορίας",
+    "General Knowledge": "Γενικών Γνώσεων",
+    "World Religions": "Παγκόσμιων Θρησκειών",
+    "Mathematics": "Μαθηματικών",
+    "Clinical Knowledge": "Κλινικών Γνώσεων",
+    "Driving Rules": "Κανόνων Οδικής Κυκλοφορίας",
+    "Biology": "Βιολογίας",
+    "Civil Engineering": "Πολιτικών Μηχανικών",
+    "Computer Science": "Επιστήμης Υπολογιστών",
+    "Geography": "Γεωγραφίας",
+    "Chemistry": "Χημείας",
+    "Prehistory": "Προϊστορίας",
+    "Agriculture": "Γεωργίας",
+    "Modern Greek Language": "Νεοελληνικής Γλώσσας",
+    "Accounting": "Λογιστικής",
+    "Greek History": "Ελληνικής Ιστορίας",
+    "Management": "Διοίκησης Επιχειρήσεων",
+    "Greek Traditions": "Ελληνικών Παραδόσεων",
+}
+
+
 
 # Greek choice labels
-LABELS = ["Α.", "Β.", "Γ.", "Δ.", "Ε."]
+LABELS = ["Α.", "Β.", "Γ.", "Δ."]
 
 
 def doc_to_text(doc):

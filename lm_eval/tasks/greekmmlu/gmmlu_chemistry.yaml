@@ -1,0 +1,4 @@
+include: _default_gmmlu_template_yaml
+task: gmmlu_chemistry
+task_alias: Chemistry
+dataset_name: Chemistry

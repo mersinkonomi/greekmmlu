@@ -1,0 +1,4 @@
+include: _default_gmmlu_template_yaml
+task: gmmlu_computer_networks_and_security
+task_alias: Computer Networks and Security
+dataset_name: Computer_Networks_and_Security
