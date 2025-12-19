@@ -2,10 +2,10 @@
 Greek MMLU utility functions for formatting questions and choices.
 """
 
-PROMPT = "Αυτό είναι ένα {}. Επίλεξε τη σωστή απάντηση!\n\nΕρώτηση: {}\n{}\n\nΑπάντηση:"
+PROMPT = "Επίλεξε τη σωστή απάντηση!\n\nΕρώτηση: {}\n{}\n\nΑπάντηση:"
 
 # Greek choice labels
-LABELS = ["Α.", "Β.", "Γ.", "Δ.", "Ε."]
+LABELS = ["Α.", "Β.", "Γ.", "Δ."]
 
 
 def doc_to_text(doc):
