@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_greek_mythology
-task_alias: Greek Mythology
-dataset_name: Greek_Mythology

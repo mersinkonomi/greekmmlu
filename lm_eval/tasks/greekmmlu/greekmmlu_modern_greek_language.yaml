@@ -1,9 +1,0 @@
-include: _default_greekmmlu_template_yaml
-task: greekmmlu_modern_greek_language
-task_alias: Modern Greek Language
-dataset_name: json
-dataset_kwargs:
-  data_files:
-    test: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/modern_greek_language_test.jsonl
-    dev: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/modern_greek_language_dev.jsonl
-tag: greekmmlu_social_science_tasks

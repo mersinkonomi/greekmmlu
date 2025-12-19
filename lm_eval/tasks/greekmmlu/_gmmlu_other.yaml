@@ -1,8 +1,0 @@
-group: gmmlu_other
-task:
-  - gmmlu_driving_rules
-  - gmmlu_general_knowledge
-aggregate_metric_list:
-  - metric: acc
-    aggregation: mean
-    weight_by_size: true

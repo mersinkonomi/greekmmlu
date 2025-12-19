@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_clinical_knowledge
-task_alias: Clinical Knowledge
-dataset_name: Clinical_Knowledge

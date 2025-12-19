@@ -1,9 +1,0 @@
-include: _default_greekmmlu_template_yaml
-task: greekmmlu_agriculture
-task_alias: Agriculture
-dataset_name: json
-dataset_kwargs:
-  data_files:
-    test: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/agriculture_test.jsonl
-    dev: https://huggingface.co/datasets/mkonomi/greek_mmlu/resolve/main/data/agriculture_dev.jsonl
-tag: greekmmlu_stem_tasks

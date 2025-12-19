@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_accounting
-task_alias: Accounting
-dataset_name: Accounting

@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_prehistory
-task_alias: Prehistory
-dataset_name: Prehistory

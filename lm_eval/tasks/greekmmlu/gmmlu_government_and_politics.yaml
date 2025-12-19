@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_government_and_politics
-task_alias: Government and Politics
-dataset_name: Government_and_Politics

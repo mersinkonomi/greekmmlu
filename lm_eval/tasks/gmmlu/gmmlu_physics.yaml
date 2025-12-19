@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_physics
-task_alias: Physics
-dataset_name: Physics

@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_art
-task_alias: Art
-dataset_name: Art

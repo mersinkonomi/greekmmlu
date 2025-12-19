@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_geography
-task_alias: Geography
-dataset_name: Geography

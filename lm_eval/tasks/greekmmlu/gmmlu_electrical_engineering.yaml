@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_electrical_engineering
-task_alias: Electrical Engineering
-dataset_name: Electrical_Engineering

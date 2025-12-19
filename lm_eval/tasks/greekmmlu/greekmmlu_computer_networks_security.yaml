@@ -1,5 +1,0 @@
-include: _default_greekmmlu_template_yaml
-task: greekmmlu_computer_networks_security
-task_alias: Computer Networks & Security
-dataset_name: computer_networks_security
-tag: greekmmlu_stem_tasks

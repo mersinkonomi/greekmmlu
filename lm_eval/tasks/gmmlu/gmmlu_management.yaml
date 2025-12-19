@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_management
-task_alias: Management
-dataset_name: Management

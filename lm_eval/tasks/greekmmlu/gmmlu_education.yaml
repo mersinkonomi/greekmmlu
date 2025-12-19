@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_education
-task_alias: Education
-dataset_name: Education

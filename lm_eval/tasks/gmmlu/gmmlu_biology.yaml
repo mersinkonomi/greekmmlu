@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_biology
-task_alias: Biology
-dataset_name: Biology

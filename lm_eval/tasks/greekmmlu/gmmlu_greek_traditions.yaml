@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_greek_traditions
-task_alias: Greek Traditions
-dataset_name: Greek_Traditions

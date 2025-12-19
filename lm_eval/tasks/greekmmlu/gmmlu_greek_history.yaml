@@ -1,4 +1,0 @@
-include: _default_gmmlu_template_yaml
-task: gmmlu_greek_history
-task_alias: Greek History
-dataset_name: Greek_History
