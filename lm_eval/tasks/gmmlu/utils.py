@@ -2,7 +2,7 @@
 Greek MMLU utility functions for formatting questions and choices.
 """
 
-PROMPT = "Ερώτηση: {}\\n{}\\n\\nΑπάντηση:"
+PROMPT = "Αυτό είναι ένα {}. Επίλεξε τη σωστή απάντηση!\n\nΕρώτηση: {}\n{}\n\nΑπάντηση:"
 
 # Greek choice labels
 LABELS = ["Α.", "Β.", "Γ.", "Δ.", "Ε."]
