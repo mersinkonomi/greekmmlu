@@ -22,7 +22,7 @@ declare -a MODELS=(
 # Define tasks with their few-shot settings
 # Format: "task_name:few_shot_count"
 declare -a TASKS=(
-    "greekmmlu_qa:5"
+    "greekmmlu_qa:0"
 )
 
 echo "Starting evaluation for ${#MODELS[@]} model(s)"
