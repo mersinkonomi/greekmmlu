@@ -84,16 +84,3 @@ def doc_to_choice(doc):
     num_choices = len(doc["choices"])
     return [LABELS[i][0] for i in range(num_choices)]
 
-
-def filter_by_subject(dataset, subject):
-    """
-    Filter dataset to only include documents matching the specified subject.
-    
-    Args:
-        dataset: HuggingFace dataset
-        subject: Subject name to filter by
-        
-    Returns:
-        Filtered dataset
-    """
-    return dataset.filter(lambda doc: doc.get("subject") == subject)
