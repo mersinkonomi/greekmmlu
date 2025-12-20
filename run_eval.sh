@@ -9,20 +9,20 @@ WORK_DIR="/home/mersin-konomi/model_eval/lm-evaluation-harness"
 # Create cache directory if it doesn't exist
 mkdir -p "$CACHE_DIR"
 
-# Define models to test (only Meltemi models)
+# Define models to test (all Greek models)
 declare -a MODELS=(
-    "ilsp/Meltemi-7B-v1"
-    # "ilsp/Meltemi-7B-v1.5"
-    "ilsp/Meltemi-7B-Instruct-v1.5"
     "ilsp/Llama-Krikri-8B-Base"
     "ilsp/Llama-Krikri-8B-Instruct"
-    "meta-llama/Llama-3.1-8B"
+    "ilsp/Meltemi-7B-v1"
+    "ilsp/Meltemi-7B-v1.5"
+    "ilsp/Meltemi-7B-Instruct-v1.5"
 )
 
 # Define tasks with their few-shot settings
 # Format: "task_name:few_shot_count"
 declare -a TASKS=(
     "greekmmlu_qa:0"
+    "greekmmlu_qa:5"
 )
 
 echo "Starting evaluation for ${#MODELS[@]} model(s)"
