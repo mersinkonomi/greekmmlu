@@ -85,19 +85,6 @@ def doc_to_choice(doc):
     return [LABELS[i][0] for i in range(num_choices)]
 
 
-def doc_to_target(doc):
-    """
-    Return the correct answer letter for exact_match comparison.
-    
-    Args:
-        doc: Dictionary with 'answer' field (0-indexed)
-        
-    Returns:
-        The correct answer letter (e.g., 'Α', 'Β', 'Γ', 'Δ')
-    """
-    return LABELS[doc["answer"]][0]
-
-
 def process_results(doc, results):
     """
     Process results for generate_until format (API compatibility).
