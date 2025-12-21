@@ -6,7 +6,14 @@ import re
 # Regex to find answer letters (Greek or English)
 ANSWER_RE = re.compile(r"[ΑΒΓΔABCD]")
 
-PROMPT = "Αυτό είναι μια ερώτηση {}. Επίλεξε τη σωστή απάντηση!\n\nΕρώτηση: {}\n{}\n\n Απάντηση:"
+PROMPT = (
+    "Αυτό είναι μια ερώτηση {}.\n\n"
+    "Ερώτηση: {}\n"
+    "{}\n\n"
+    "Απάντησε ΜΟΝΟ με το γράμμα της σωστής επιλογής "
+    "(π.χ. Α, Β, Γ ή Δ).\n"
+    "Απάντηση:"
+)
 
 
 # subjects_gr
@@ -102,27 +109,24 @@ def process_results(doc, results):
         Dictionary with accuracy metric
     """
     pred = results[0].strip().upper()
-    
-    # Get valid labels based on number of choices
+
     num_choices = len(doc["choices"])
     valid_labels = [LABELS[i][0] for i in range(num_choices)]
-    
+
     pred_letter = ""
-    
-    if pred:
-        m = ANSWER_RE.search(pred)
-        if m:
-            c = m.group(0)
-            # Map English to Greek
-            if c in ["A", "B", "C", "D"]:
-                mapping = {"A": "Α", "B": "Β", "C": "Γ", "D": "Δ"}
-                c = mapping[c]
-            
-            # Validate prediction is in valid labels
-            if c in valid_labels:
-                pred_letter = c
-    
+
+    m = ANSWER_RE.search(pred)
+    if m:
+        c = m.group(0)
+
+        if c in ["A", "B", "C", "D"]:
+            mapping = {"A": "Α", "B": "Β", "C": "Γ", "D": "Δ"}
+            c = mapping[c]
+
+        if c in valid_labels:
+            pred_letter = c
+
     gold = valid_labels[doc["answer"]]
-    
-    return {"acc": 1.0 if pred_letter == gold else 0.0}
+
+    return {"acc": float(pred_letter == gold)}
 

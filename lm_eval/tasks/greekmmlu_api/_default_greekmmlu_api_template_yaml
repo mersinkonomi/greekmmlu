@@ -5,8 +5,8 @@ fewshot_config:
   sampler: first_n
 output_type: generate_until
 generation_kwargs:
-  until: ["\n"]
-  max_gen_toks: 10
+  until: ["</s>", "<|im_end|>", "<|end|>", "Ερώτηση:"]
+  max_gen_toks: 20
   do_sample: false
   temperature: 0.0
 doc_to_text: !function utils.doc_to_text
