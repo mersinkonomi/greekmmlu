@@ -4,7 +4,7 @@ fewshot_split: dev
 fewshot_config:
   sampler: first_n
 output_type: generate_until
-doc_to_text: "{{question.strip()}}\nΑ. {{choices[0]}}\nΒ. {{choices[1]}}\nΓ. {{choices[2]}}\nΔ. {{choices[3]}}\nΑπάντηση:"
+doc_to_text: !function utils.doc_to_text
 doc_to_target: "{{['Α', 'Β', 'Γ', 'Δ'][answer]}}"
 generation_kwargs:
   until:
@@ -19,12 +19,9 @@ metric_list:
 filter_list:
   - name: get_response
     filter:
-      # Filter everything after the first break line
       - function: "regex"
         regex_pattern: "^(.*?)(?=\\n|$)"
-      # Remove leading white spaces
       - function: remove_whitespace
-      # function to ignore right white spaces or line breaks
       - function: "regex"
         regex_pattern: "^(.*?)\\s*$"
       - function: take_first

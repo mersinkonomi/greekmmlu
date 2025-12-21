@@ -1,6 +1,10 @@
 """
 Greek MMLU utility functions for formatting questions and choices.
 """
+import re
+
+# Regex to find answer letters (Greek or English)
+ANSWER_RE = re.compile(r"[ΑΒΓΔABCD]")
 
 PROMPT = "Αυτό είναι μια ερώτηση {}. Επίλεξε τη σωστή απάντηση!\n\nΕρώτηση: {}\n{}\n\n Απάντηση:"
 
@@ -88,30 +92,37 @@ def doc_to_choice(doc):
 def process_results(doc, results):
     """
     Process results for generate_until format (API compatibility).
+    Handles variable number of choices (2, 3, or 4).
     
     Args:
-        doc: Dictionary with document data including 'answer' field
+        doc: Dictionary with document data including 'answer' and 'choices' fields
         results: List containing the model's generated response
         
     Returns:
         Dictionary with accuracy metric
     """
-    # Get the model's prediction and clean it
     pred = results[0].strip().upper()
     
-    # Extract just the letter (Α, Β, Γ, Δ) from the prediction
-    # Handle cases like "Α.", "Α ", "α", etc.
-    if pred and pred[0] in ["Α", "Β", "Γ", "Δ", "A", "B", "C", "D"]:
-        pred_letter = pred[0]
-        # Map English to Greek if needed
-        if pred_letter in ["A", "B", "C", "D"]:
-            mapping = {"A": "Α", "B": "Β", "C": "Γ", "D": "Δ"}
-            pred_letter = mapping[pred_letter]
-    else:
-        pred_letter = ""
+    # Get valid labels based on number of choices
+    num_choices = len(doc["choices"])
+    valid_labels = [LABELS[i][0] for i in range(num_choices)]
     
-    # Get the correct answer
-    gold = LABELS[doc["answer"]][0]  # "Α", "Β", "Γ", or "Δ"
+    pred_letter = ""
     
-    # Return accuracy
+    if pred:
+        m = ANSWER_RE.search(pred)
+        if m:
+            c = m.group(0)
+            # Map English to Greek
+            if c in ["A", "B", "C", "D"]:
+                mapping = {"A": "Α", "B": "Β", "C": "Γ", "D": "Δ"}
+                c = mapping[c]
+            
+            # Validate prediction is in valid labels
+            if c in valid_labels:
+                pred_letter = c
+    
+    gold = valid_labels[doc["answer"]]
+    
     return {"acc": 1.0 if pred_letter == gold else 0.0}
+
