@@ -130,3 +130,18 @@ def process_results(doc, results):
 
     return {"acc": float(pred_letter == gold)}
 
+
+def doc_to_target(doc):
+    """
+    Convert answer index to Greek letter string for fewshot examples.
+    
+    Args:
+        doc: Dictionary with 'answer' field (integer index)
+        
+    Returns:
+        Greek letter string (Α, Β, Γ, or Δ)
+    """
+    num_choices = len(doc["choices"])
+    valid_labels = [LABELS[i][0] for i in range(num_choices)]
+    return valid_labels[doc["answer"]]
+

@@ -1,74 +1,82 @@
 #!/bin/bash
-# chmod +x /datalake/datastore1/yang/el_llm/run_eval.sh
+# chmod +x /home/mersin-konomi/model_eval/lm-evaluation-harness/run_eval.sh
 
 # Configuration
 CACHE_DIR="/home/mersin-konomi/cache"
-OUTPUT_PATH="/home/mersin-konomi/eval_results"
+BASE_OUTPUT_PATH="/home/mersin-konomi/eval_results"
 WORK_DIR="/home/mersin-konomi/model_eval/lm-evaluation-harness"
 
-# Create cache directory if it doesn't exist
+# Create output directories
 mkdir -p "$CACHE_DIR"
+mkdir -p "$BASE_OUTPUT_PATH/results_0_shot"
+mkdir -p "$BASE_OUTPUT_PATH/results_5_shot"
 
-# Define models to test (all Greek models)
+# Define models to test (Meta Llama models)
 declare -a MODELS=(
-    "ilsp/Llama-Krikri-8B-Base"
-    "ilsp/Llama-Krikri-8B-Instruct"
-    "ilsp/Meltemi-7B-v1"
-    "ilsp/Meltemi-7B-v1.5"
-    "ilsp/Meltemi-7B-Instruct-v1.5"
+    "meta-llama/Llama-3.1-70B-Instruct"
 )
 
-# Define tasks with their few-shot settings
-# Format: "task_name:few_shot_count"
-declare -a TASKS=(
-    "greekmmlu_qa:0"
-    "greekmmlu_qa:5"
-)
+# Few-shot settings
+declare -a FEW_SHOTS=(0 5)
+
+# Task name
+TASK="greekmmlu_qa"
 
 echo "Starting evaluation for ${#MODELS[@]} model(s)"
 echo "Cache directory: $CACHE_DIR"
-echo "Output path: $OUTPUT_PATH"
+echo "Output paths: $BASE_OUTPUT_PATH/results_0_shot, $BASE_OUTPUT_PATH/results_5_shot"
 echo "================================================"
 
 # Run evaluation for each model
 for MODEL_NAME in "${MODELS[@]}"; do
-    echo "Starting evaluation for model: $MODEL_NAME"
+    # Extract short model name for folder
+    MODEL_SHORT=$(basename "$MODEL_NAME")
+    
+    echo "Starting evaluation for model: $MODEL_NAME ($MODEL_SHORT)"
     echo "================================================"
     
-    # Run evaluation for each task with its specific few-shot setting
-    for task_config in "${TASKS[@]}"; do
-        # Split task name and few-shot count
-        IFS=':' read -r task_name few_shot <<< "$task_config"
+    # Run evaluation for each few-shot setting
+    for FEW_SHOT in "${FEW_SHOTS[@]}"; do
+        # Set output path based on few-shot setting
+        OUTPUT_PATH="$BASE_OUTPUT_PATH/results_${FEW_SHOT}_shot/$MODEL_SHORT"
+        mkdir -p "$OUTPUT_PATH"
         
-        echo "Running $task_name with $few_shot few-shot examples..."
+        echo "Running $TASK with $FEW_SHOT few-shot examples..."
+        echo "Output: $OUTPUT_PATH"
         
         # Build and run the command
-        # Using single GPU (cuda:0)
         cd "$WORK_DIR"
-        CUDA_LAUNCH_BLOCKING=1 python3 -m lm_eval \
+        python3 -m lm_eval \
             --model hf \
-            --model_args "pretrained=$MODEL_NAME,cache_dir=$CACHE_DIR" \
-            --tasks "$task_name" \
-            --batch_size 1 \
+            --model_args "pretrained=$MODEL_NAME,device_map=auto" \
+            --tasks "$TASK" \
+            --batch_size auto \
             --trust_remote_code \
-            --num_fewshot "$few_shot" \
+            --num_fewshot "$FEW_SHOT" \
             --output_path "$OUTPUT_PATH" \
-            --device cuda:1 \
             --log_samples
         
         if [ $? -ne 0 ]; then
-            echo "Error: Evaluation failed for task $task_name on model $MODEL_NAME"
+            echo "Error: Evaluation failed for $TASK ($FEW_SHOT-shot) on model $MODEL_NAME"
             exit 1
         fi
         
-        echo "Completed $task_name for $MODEL_NAME"
+        echo "Completed $TASK ($FEW_SHOT-shot) for $MODEL_NAME"
         echo "--------------------------------"
     done
     
-    echo "Completed all tasks for model: $MODEL_NAME"
+    echo "Completed all evaluations for model: $MODEL_NAME"
     echo "================================================"
 done
 
 echo "All evaluations completed successfully for all models!"
-
-# bash /datalake/datastore1/yang/el_llm/run_eval.sh
+echo ""
+echo "Results structure:"
+echo "$BASE_OUTPUT_PATH/"
+echo "├── results_0_shot/"
+echo "│   ├── Llama-3.2-3B-Instruct/"
+echo "│   ├── Llama-3.1-8B-Instruct/"
+echo "│   └── Llama-3.1-70B-Instruct/"
+echo "└── results_5_shot/"
+echo "    ├── Llama-3.2-3B-Instruct/"
+echo "    └── ..."
